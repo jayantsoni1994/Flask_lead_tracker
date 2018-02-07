@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+	<h1>users</h1>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+</style>
+	<center><table style="width:70%">
+  <tr>
+    <th><center>ID</center></th>
+    <th><center>COURSE</center></th>
+    <th><center>NAME</center></th>
+    
+    <th><center>COMPLECTION</center></th>
+    <th><center>DATA OF JIONING</center></th>
+    <th><center>COURSE FEE</center></th>
+    <th><center>INSTRUCTOR</center></th>
+    <th><center>Aadhar number</center></th>
+    <th><center>Mobile</center></th>
+    <th><center>Email</center></th>
+    <th><center>Remarks</center></th>
+    <th><center>Status</center></th>
+<!--     <center><th>UPDATA</th></center>
+    <center><th>DELECT</th></center> -->
+  </tr>  
+  {% for x in rv%}
+  <tr>
+    <td><center>{{x['id']}}</center></td>
+    <td><center>{{x['course']}}</center></td>
+    <td><center>{{x['name']}}</center></td>
+    <td><center>{{x['comlection_date']}}</center></td>  
+    <td><center>{{x['data_joining']}}</center></td>
+    <td><center>{{x['course_fee']}}</center></td>
+    <td><center>{{x['instructor']}}</center></td>
+    <td><center>{{x['aadhar_number']}}</center></td>
+    <td><center>{{x['mobile']}}</center></td>
+    <td><center>{{x['email']}}</center></td>
+    <td><center>{{x['remarks']}}</center></td>
+    <td><center>{{x['status']}}</center></td>
+
+<!--     <center><th><button type="submit" class="btn btn-success">UPDATE</button></th></center>
+    <center><th><button type="submit" class="btn btn-primary">DELECT</button></th></center>
+ -->  </tr>
+  {% endfor %}
+</table></center>
+</div>
+
+
+{% endblock %}

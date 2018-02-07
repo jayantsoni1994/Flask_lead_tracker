@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div>
+	<h1>currentstatus</h1>
+<style>
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+
+}
+</style>
+	<center><table style="width:70%">
+  <tr>
+    <th><center>ID</center></th>
+    <th><center>COURSE</center></th>
+    <th><center>NAME</center></th>
+    
+    <th><center>COMPLETION</center></th>
+    <th><center>DATA OF JIONING</center></th>
+    
+    <th><center>INSTRUCTOR</center></th>
+    
+    <th><center>Mobile</center></th>
+    <th><center>Email</center></th>
+    <th><center>complete</center></th>
+    <th><center>Delay</center></th>
+    <th><center>DEAD</center></th>
+
+<!--     <center><th>UPDATA</th></center>
+    <center><th>DELECT</th></center> -->
+  </tr>  
+  {% for x in rv%}
+  <tr>
+    <td><center><b>{{x['id']}}</b></center></td>
+    <td><center><b>{{x['course']}}</b></center></td>
+    <td><center><b>{{x['name']}}</b></center></td>
+    <td><center><b>{{x['comlection_date']}}</b></center></td>  
+    <td><center><b>{{x['data_joining']}}</b></center></td>
+   
+    <td><center><b>{{x['instructor']}}</b></center></td>
+    
+    <td><center><b>{{x['mobile']}}</b></center></td>
+    <td><center><b>{{x['email']}}</b></center></td>
+    <th><center><button><a class="btn btn-success" href="/about?id={{x['id']}}">Complete</a></button></center></th>
+    <th><center><button><a class="btn btn-warning" href="/updateprofiledelay?id={{x['id']}}">Delay</a></button></center></th>
+    <th><center><button><a class="btn btn-danger" href="/dead?id={{x['id']}}">Dead</a></button></center></th>
+
+  </tr>
+  {% endfor %}
+</table></center>
+</div>
+
+
+{% endblock %}

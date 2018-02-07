@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-sm-1" style="background-color:lavender;"></div>
+    <!-- <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div> -->
+  <div class="col-sm-10" style="background-color:lavender;">
+    <div class="form-group">
+   
+    <center><h1>Walkins</h1></center></div>
+    <style>
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width:10px;
+}
+</style>
+
+<center><table style="width:70%">
+  <tr>
+    <th><center>ID</center></th>
+    <th><center>NAME</center></th>
+    <th><center>Mobile</center></th>
+    <th><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center></th>
+    <th><center>Course</center></th>
+    <th><center>Sourse</center></th>
+    <th><center>LeadStatus</center></th>
+    <th><center>&nbsp;&nbsp;&nbsp;Demodate&nbsp;&nbsp;&nbsp;</center></th>
+    <th><center>Counsler</center></th>
+    <th><center>remarks</center></th>
+    
+  </tr>  
+  {% for x in rv1%}
+  <tr>
+    <td><center>{{x['id']}}</center></td>
+    <td><center>{{x['st_name']}}</center></td>
+    <td><center>{{x['st_mobile']}}</center></td>  
+    <td><center>{{x['st_email']}}</center></td>
+    <td><center>{{x['st_course']}}</center></td>
+    <td><center>{{x['st_source']}}</center></td>
+    <td><center>{{x['st_lead_status']}}</center></td>
+    <td><center>{{x['st_demo_date']}}</center></td>
+    <td><center>{{x['st_counsler']}}</center></td>
+    <td><center>{{x['st_remarks']}}</center></td>
+
+    
+  </tr>
+  {% endfor %}
+</table></center>
+<br><br>
+ </div>
+   <div class="col-sm-1" style="background-color:lavender;"></div>
+   </div>
+</div>
+
+
+{% endblock %}
